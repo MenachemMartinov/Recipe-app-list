@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		560542B7272E8F2A00DC2F23 /* RecipeDetatilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560542B6272E8F2A00DC2F23 /* RecipeDetatilView.swift */; };
 		560C15C6273115F500BB7827 /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C15C5273115F500BB7827 /* RecipeTabView.swift */; };
+		5695B107273269A300868892 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5695B106273269A300868892 /* recipes.json */; };
 		56DF251C272DC38300103545 /* Recipe_App_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF251B272DC38300103545 /* Recipe_App_List.swift */; };
 		56DF251E272DC38300103545 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF251D272DC38300103545 /* RecipeView.swift */; };
 		56DF2520272DC38400103545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DF251F272DC38400103545 /* Assets.xcassets */; };
 		56DF2523272DC38400103545 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DF2522272DC38400103545 /* Preview Assets.xcassets */; };
-		56DF2531272DC48600103545 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 56DF2530272DC48600103545 /* recipes.json */; };
 		56DF2533272DC53200103545 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF2532272DC53200103545 /* Recipe.swift */; };
 		56DF2535272DC6A000103545 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF2534272DC6A000103545 /* RecipeModel.swift */; };
 		56DF2537272DC7F200103545 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF2536272DC7F200103545 /* DataService.swift */; };
@@ -22,12 +22,12 @@
 /* Begin PBXFileReference section */
 		560542B6272E8F2A00DC2F23 /* RecipeDetatilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetatilView.swift; sourceTree = "<group>"; };
 		560C15C5273115F500BB7827 /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
+		5695B106273269A300868892 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = recipes.json; path = "../../../../../iOS Foundations 2021/Module 4/Lesson 05/recipes.json"; sourceTree = "<group>"; };
 		56DF2518272DC38300103545 /* Recipe App List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DF251B272DC38300103545 /* Recipe_App_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_App_List.swift; sourceTree = "<group>"; };
 		56DF251D272DC38300103545 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		56DF251F272DC38400103545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56DF2522272DC38400103545 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		56DF2530272DC48600103545 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		56DF2532272DC53200103545 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		56DF2534272DC6A000103545 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		56DF2536272DC7F200103545 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		56DF252A272DC3C800103545 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				56DF2530272DC48600103545 /* recipes.json */,
+				5695B106273269A300868892 /* recipes.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DF2523272DC38400103545 /* Preview Assets.xcassets in Resources */,
-				56DF2531272DC48600103545 /* recipes.json in Resources */,
+				5695B107273269A300868892 /* recipes.json in Resources */,
 				56DF2520272DC38400103545 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,14 +28,18 @@ class DataService {
 
                 for r in recipeData {
                     r.id = UUID()
+
+                    for i in r.ingredients {
+                        i.id = UUID()
+                    }
                 }
                 return recipeData
             } catch {
-                print(error)
+                print("decoder error: \(error)")
             }
 
         } catch {
-            print(error)
+            print("data error: \(error)")
         }
 
         return [Recipe]()
