@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeView: View {
-   @EnvironmentObject var model:RecipeModel
+    @EnvironmentObject var model: RecipeModel
 
     var body: some View {
         NavigationView {
