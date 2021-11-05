@@ -12,19 +12,42 @@ struct RecipeView: View {
 
     var body: some View {
         NavigationView {
-            List(model.recipes) { r in
+            VStack(alignment: .leading) {
+                // MARK: Haed line
 
-                NavigationLink(destination: RecipeDetatilView(recipe: r), label: {
-                    // MARK: Row Item
+                Text("All Recipes")
+                    .bold()
+                    .font(.largeTitle)
+                    .padding(.leading)
 
-                    HStack(spacing: 20.0) {
-                        Image(r.image)
-                            .resizable().scaledToFill().frame(width: 50, height: 50, alignment: .center).clipped()
-                        Text(r.name)
+                // MARK: ScrollView
+
+                ScrollView {
+                    LazyVStack(alignment: .leading) {
+                        ForEach(model.recipes) { r in
+
+                            NavigationLink(
+                                destination: RecipeDetatilView(recipe: r),
+                                label: {
+                                    // MARK: Row Item
+
+                                    HStack(spacing: 20.0) {
+                                        Image(r.image)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 50, height: 50, alignment: .center)
+                                            .clipped()
+                                            .cornerRadius(10)
+                                        Text(r.name)
+                                            .foregroundColor(.black)
+                                    }
+                                })
+                        }
                     }
-                })
+                }
             }
-            .navigationBarTitle("All Recipes")
+            .navigationBarHidden(true)
+            .padding(.leading)
         }
     }
 }
@@ -32,5 +55,6 @@ struct RecipeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeView()
+            .environmentObject(RecipeModel())
     }
 }
