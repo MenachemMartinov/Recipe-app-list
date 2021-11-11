@@ -39,8 +39,8 @@ struct RecipeView: View {
                                             .clipped()
                                             .cornerRadius(10)
                                         Text(r.name)
-                                            .foregroundColor(.black)
                                     }
+                                    .preferredColorScheme(.dark)
                                 })
                         }
                     }
