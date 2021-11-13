@@ -40,7 +40,6 @@ struct RecipeView: View {
                                             .cornerRadius(10)
                                         Text(r.name)
                                     }
-                                    .preferredColorScheme(.dark)
                                 })
                         }
                     }

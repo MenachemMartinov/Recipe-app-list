@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecipeFeaturedView: View {
     @EnvironmentObject var model: RecipeModel
+    @State var isDetailViewShowing = false
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -39,23 +40,32 @@ struct RecipeFeaturedView: View {
                         if recipe.featured {
                             // MARK: View
 
-                            ZStack {
-                                Rectangle()
-                                    .foregroundColor(.white)
+                            Button(action: {
+                                self.isDetailViewShowing = true
+                            }, label: {
+                                // MARK: ZStack
 
-                                VStack {
-                                    Image(recipe.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.white)
 
-                                    Text(recipe.name)
-                                        .padding(5)
+                                    VStack {
+                                        Image(recipe.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .clipped()
+
+                                        Text(recipe.name)
+                                            .padding(5)
+                                    }
                                 }
-                            }
-                            .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
-                            .cornerRadius(15)
-                            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 5)
+                            })
+                                .sheet(isPresented: $isDetailViewShowing) {
+                                    RecipeDetatilView(recipe: model.recipes[i])
+                                }
+                                .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
+                                .cornerRadius(15)
+                                .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 5)
                         }
                     }
                 }

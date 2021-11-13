@@ -20,6 +20,14 @@ struct RecipeDetatilView: View {
                     .resizable()
                     .scaledToFill()
 
+                // MARK: Recipe title
+
+                Text(recipe.name)
+                    .bold()
+                    .padding(.top, 20)
+                    .padding(.leading)
+                    .font(.largeTitle)
+
                 // MARK: Serving Sise Picker
 
                 VStack(alignment: .leading) {
@@ -46,7 +54,7 @@ struct RecipeDetatilView: View {
                         Text("• "
                             +
                             RecipeModel.getPortion(i, recipe.servings, selectedServingSize) + " " +
-                            i.name)
+                            i.name.lowercased())
                             .padding(.bottom, 1)
                     }
                 }
@@ -75,7 +83,6 @@ struct RecipeDetatilView: View {
                 Divider()
             }
         }
-        .navigationBarTitle(recipe.name)
     }
 }
 
