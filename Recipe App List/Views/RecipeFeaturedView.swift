@@ -10,7 +10,7 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     @EnvironmentObject var model: RecipeModel
     @State var isDetailViewShowing = false
-
+    @State var tabColectionIndex = 0
     var body: some View {
         VStack(alignment: .leading) {
             // MARK: Head title
@@ -26,7 +26,7 @@ struct RecipeFeaturedView: View {
 
                 // MARK: Tab view
 
-                TabView {
+                TabView(selection: $tabColectionIndex) {
                     // MARK: For each
 
                     ForEach(0 ..< model.recipes.count) { i in
@@ -60,6 +60,7 @@ struct RecipeFeaturedView: View {
                                     }
                                 }
                             })
+                                .tag(i)
                                 .sheet(isPresented: $isDetailViewShowing) {
                                     RecipeDetatilView(recipe: model.recipes[i])
                                 }
@@ -76,16 +77,28 @@ struct RecipeFeaturedView: View {
             // MARK: VStack
 
             VStack(alignment: .leading, spacing: 10) {
+                let theRecipe: Recipe = model.recipes[tabColectionIndex]
                 Text("Prepartion Time:")
                     .font(.headline)
-                Text("1 hour")
+                Text(theRecipe.prepTime)
 
                 Text("Highlights")
                     .font(.headline)
-                Text("Healthy, Hearty")
+                RecipeHighlights(highlights: theRecipe.highlights)
             }
             .padding([.leading, .bottom])
         }
+        .onAppear(perform: {
+            setFeaturedIndex()
+        })
+    }
+
+    func setFeaturedIndex() {
+        let index = model.recipes.firstIndex { (recipe) -> Bool
+            in
+            recipe.featured
+        }
+        tabColectionIndex = index ?? 0
     }
 }
 
