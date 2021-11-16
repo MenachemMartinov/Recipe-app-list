@@ -16,8 +16,7 @@ struct RecipeView: View {
                 // MARK: Haed line
 
                 Text("All Recipes")
-                    .bold()
-                    .font(.largeTitle)
+                    .font(Font.custom("Avenir Heavy", size: 24))
                     .padding(.leading)
 
                 // MARK: ScrollView
@@ -40,10 +39,10 @@ struct RecipeView: View {
                                             .cornerRadius(10)
                                         VStack(alignment: .leading) {
                                             Text(r.name)
-                                                .foregroundColor(.black)
-                                                .bold()
+                                                .foregroundColor(.primary)
+                                                .font(Font.custom("Avenir Heavy", size: 16))
                                             RecipeHighlights(highlights: r.highlights)
-                                                .foregroundColor(.black)
+                                                .foregroundColor(.primary)
                                         }
                                     }
                                 })
@@ -63,3 +62,5 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(RecipeModel())
     }
 }
+
+// Unable to see text in the "NavigationLink" in dark mode

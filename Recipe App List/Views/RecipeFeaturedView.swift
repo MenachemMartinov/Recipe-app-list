@@ -16,9 +16,9 @@ struct RecipeFeaturedView: View {
             // MARK: Head title
 
             Text("Featured Recupes")
-                .bold()
-                .font(.largeTitle)
+                .font(Font.custom("Avenir Heavy", size: 24))
                 .padding(.leading)
+                .padding(.top)
 
             // MARK: Geometry reader and card view
 
@@ -57,6 +57,7 @@ struct RecipeFeaturedView: View {
 
                                         Text(recipe.name)
                                             .padding(5)
+                                            .font(Font.custom("Avenir", size: 15))
                                     }
                                 }
                             })
@@ -64,6 +65,7 @@ struct RecipeFeaturedView: View {
                                 .sheet(isPresented: $isDetailViewShowing) {
                                     RecipeDetatilView(recipe: model.recipes[i])
                                 }
+                                .buttonStyle(PlainButtonStyle())
                                 .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
                                 .cornerRadius(15)
                                 .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -5, y: 5)
@@ -79,11 +81,11 @@ struct RecipeFeaturedView: View {
             VStack(alignment: .leading, spacing: 10) {
                 let theRecipe: Recipe = model.recipes[tabColectionIndex]
                 Text("Prepartion Time:")
-                    .font(.headline)
+                    .font(Font.custom("Avenir Heavy", size: 16))
                 Text(theRecipe.prepTime)
 
                 Text("Highlights")
-                    .font(.headline)
+                    .font(Font.custom("Avenir Heavy", size: 16))
                 RecipeHighlights(highlights: theRecipe.highlights)
             }
             .padding([.leading, .bottom])

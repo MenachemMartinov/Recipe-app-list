@@ -23,10 +23,9 @@ struct RecipeDetatilView: View {
                 // MARK: Recipe title
 
                 Text(recipe.name)
-                    .bold()
+                    .font(Font.custom("Avenir Heavy", size: 24))
                     .padding(.top, 20)
                     .padding(.leading)
-                    .font(.largeTitle)
 
                 // MARK: Serving Sise Picker
 
@@ -38,6 +37,7 @@ struct RecipeDetatilView: View {
                         Text("6").tag(6)
                         Text("8").tag(8)
                     }
+                    .font(Font.custom("Avenir", size: 15))
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 160)
                 }
@@ -47,7 +47,7 @@ struct RecipeDetatilView: View {
 
                 VStack(alignment: .leading) {
                     Text("Ingredient")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                         .padding([.bottom, .top], 5)
 
                     ForEach(recipe.ingredients) { i in
@@ -56,6 +56,7 @@ struct RecipeDetatilView: View {
                             RecipeModel.getPortion(i, recipe.servings, selectedServingSize) + " " +
                             i.name.lowercased())
                             .padding(.bottom, 1)
+                            .font(Font.custom("Avenir", size: 15))
                     }
                 }
                 .padding(.horizontal)
@@ -68,12 +69,13 @@ struct RecipeDetatilView: View {
 
                 VStack(alignment: .leading) {
                     Text("Directions")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 16))
                         .padding([.bottom, .top], 5)
 
                     ForEach(0 ..< recipe.directions.count, id: \.self) { i in
                         Text(String(i + 1) + ". " + recipe.directions[i])
                             .padding(.bottom, 5)
+                            .font(Font.custom("Avenir", size: 15))
                     }
                 }
                 .padding(.horizontal)
